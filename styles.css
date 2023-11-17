@@ -1,0 +1,96 @@
+/* Reset de estilos */
+* {
+    margin:1rem;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    background-color: #ec8bec;
+  }
+   
+  /* Estilos do Header e do menu de navegação */
+  .menuPrincipal {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+  }
+  
+  nav ul {
+    list-style: none;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    background-color: #555;
+  }
+  
+  /* Estilos para o conteúdo principal */
+  main {
+ 
+    padding: 20px;
+  }
+  
+  section {
+    margin-bottom: 40px;
+    background-color: coral;
+  }
+  
+  h2 {
+    margin-bottom: 10px;
+  }
+  
+  .sectionInicio {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .logoCliente {
+    display: none; 
+    max-width: 500px;
+    max-height: 500px;
+    margin-top: 15px;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .logoClienteForm {
+    text-align: center;
+  }
+  
+  .logoClinteBotao[type="file"] {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 15px;
+  }
+  
+
+  .menuClientes {
+    display: flex;
+    justify-content: space-between;
+    background-color: #555;
+  }
+
+  .listaClientes {
+    background-color: aqua;
+  }
+
+  .cliente-form {
+    background-color: #555;
+  }
