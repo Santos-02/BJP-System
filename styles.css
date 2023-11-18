@@ -1,4 +1,9 @@
 /* Reset de estilos */
+:root{
+  --corprincipal: #ec8bec;
+  --corsecundaria: coral;
+}
+
 * {
     margin:1rem;
     padding: 0;
@@ -6,7 +11,7 @@
   }
 
   html {
-    background-color: #ec8bec;
+    background-color: var(--corprincipal)
   }
    
   /* Estilos do Header e do menu de navegação */
