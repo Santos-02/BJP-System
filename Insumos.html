@@ -14,7 +14,7 @@
   <div class="topnav" id="myTopnav">
     <img src="" alt="">
     <a href="/index.html">Minha Empresa</a>
-    <a href="/Clientes.html">insumos</a>
+    <a href="/Clientes.html">Clientes</a>
     <a href="/Insumos.html" class="active">Insumos</a>
     <a href="#receitas">Receitas</a>
     <a href="#cardapio">Cardapio</a>
@@ -44,12 +44,12 @@
     <div>
     <H2>Lista de Insumos Cadastrados</H2>
     </div>
-    <div class="procurarinsumo-form">
-        <h2>Buscar Insumo</h2>
+    <div class="col-12 search-container procurarinsumo-form" style="text-align: center;">
         <form action="buscar_insumos.php" method="get">
-          <label for="nome">Buscar por Nome:</label>
-          <input type="text" id="nome" name="nome">
-          <input type="submit" value="Buscar">
+          <h2>Buscar Insumo
+          <input type="search" id="buscaInsumo" class="form" placeholder="Buscar insumo" name="search" style="wight: 100px;">
+          <button type="submit" class="btn btn-primary search-icon"> <i class="fa fa-search"></i>
+          </button></h2>
         </form>
       </div>
 </header>

@@ -78,7 +78,33 @@ body{
     display: block;
     text-align: left;
   }
-}/* Reset de estilos */
+}
+
+.topnav .search-container {
+  float: right;
+}
+
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.topnav .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+  background: #ccc;
+}
 
 /* Reset de estilos */
 * {
@@ -194,3 +220,20 @@ body{
     color: #fff;
     margin: 1px;
 }
+
+/*Barra de pesquisa Phill*/
+input[type=search] {
+  width: 200px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=search]:focus {
+  width: 46%;
+}
+/*Fim*/
