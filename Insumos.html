@@ -32,12 +32,12 @@
       <label for="nome">Insumo:
       <input type="text" placeholder="Nome do Insumo" id="NomeInsumo" name="nome" required></label>
       <label for="nome">Valor:
-      <input type="text" placeholder="Valor do Insumo" id="ValorInsumo" name="nome" required></label><br>
+      <input type="text" placeholder="Valor do Insumo" id="ValorInsumo" name="nome" required></label>
       <label for="nome">Quant.:
       <input type="text" placeholder="Quantidade" id="QuantidadeInsumo" name="nome" required></label>
       <label for="nome">UN:
       <input type="text" placeholder="Unidade" id="UnidadeInsumo" name="nome" required></label>
-      <input type="submit" value="Salvar">
+      <button type="submit" class="btn save-icon"> <i class="fa fa-save"></i></button>
     </form>
   </div>
   <header class="menuInsumos">
@@ -48,7 +48,7 @@
         <form action="buscar_insumos.php" method="get">
           <h2>Buscar Insumo
           <input type="search" id="buscaInsumo" class="form" placeholder="Buscar insumo" name="search" style="wight: 100px;">
-          <button type="submit" class="btn btn-primary search-icon"> <i class="fa fa-search"></i>
+          <button type="submit" class="btn search-icon"> <i class="fa fa-search"></i>
           </button></h2>
         </form>
       </div>
