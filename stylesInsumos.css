@@ -140,7 +140,7 @@ body{
     justify-content: space-between;
   }
 
-  .logoCliente {
+  .logoInsumo {
     display: none; 
     max-width: 500px;
     max-height: 500px;
@@ -152,7 +152,7 @@ body{
     justify-content: space-between;
   }
 
-  .logoClienteForm {
+  .logoInsumoForm {
     text-align: center;
   }
   
@@ -163,17 +163,17 @@ body{
   }
   
 
-  .menuClientes {
+  .menuInsumos {
     display: flex;
     justify-content: space-between;
     background-color: #bbbaba;
   }
 
-  .listaClientes {
+  .listaInsumos {
     background-color: #bbbaba;
   }
 
-  .cliente-form {
+  .insumo-form {
     background-color: #bbbaba;
   }
 
