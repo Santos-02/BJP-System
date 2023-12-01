@@ -11,7 +11,7 @@ function salvarInformacoes() {
   meuInsumo.descricao = prompt('Digite sua descrição:');
   meuInsumo.quantidade = parseInt(prompt('Digite à quantidade:'));
   meuInsumo.unidademedida = prompt('Digite à unidade de medida:');
-  meuInsumo.valor = parseInt('Digite o valor:');
+  meuInsumo.valor = parseInt(prompt('Digite o valor:'));
 }
 
 // Função para apresentar as informações na tela
@@ -19,7 +19,7 @@ function apresentarInformacoes() {
   console.log('descricao: ' + meuInsumo.descricao);
   console.log('quantidade: ' + meuInsumo.quantidade);
   console.log('unidademedida: ' + meuInsumo.unidademedida);
-  console.log('Profissão: ' + meuInsumo.valor);
+  console.log('Valor: ' + meuInsumo.valor);
 }
 
 // Chama a função para salvar as informações
