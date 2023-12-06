@@ -1,3 +1,5 @@
+
+//botões de cadastros para abrir e fechar
 const botaoCadastros = document.getElementById('btnCadastros');
 const formCadastros = document.getElementById('frm');
 const btnCancelar = document.getElementById ('btnCancelar');

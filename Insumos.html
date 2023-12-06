@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="styles.css">
   <script src="/script.js" defer></script>
+  <script src="/meuInsumo.js" defer></script>
+
 </head>
 <body>
   <div class="topnav" id="myTopnav">
@@ -31,14 +33,14 @@
     <div>
     <div>
      <form class="formCadastroInsumos" id="frm">
-      <label for="nome">Insumo:
-      <input class="textInsumos textArea" type="text" placeholder="Nome do Insumo" id="NomeInsumo" name="nome" required></label>
-      <label for="nome">Valor:
-      <input class="textInsumos textArea" type="text" placeholder="Valor do Insumo" id="ValorInsumo" name="nome" required></label>
-      <label for="nome">Quant.:
-      <input class="textInsumos textArea" type="text" placeholder="Quantidade" id="QuantidadeInsumo" name="nome" required></label>
-      <label for="nome">UN:
-      <input class="textInsumos textArea" type="text" placeholder="Unidade" id="UnidadeInsumo" name="nome" required></label>
+      <label>Insumo:
+      <input class="textInsumos" type="text" placeholder="Nome do Insumo" id="NomeInsumo" name="nome" required></label>
+      <label>Valor:
+      <input class="textValor textArea" type="text" placeholder="Valor do Insumo" id="ValorInsumo" name="nome" required></label>
+      <label>Quant.:
+      <input class="textQuant textArea" type="text" placeholder="Quantidade" id="QuantidadeInsumo" name="nome" required></label>
+      <label>UN:
+      <input class="textUn textArea" type="text" placeholder="Unidade" id="UnidadeInsumo" name="nome" required></label>
       <div class="botoesSalvarCancelar">
       <input class="btn SalvarInsumo" type="submit" value="Salvar">
       <button class="btn" id="btnCancelar">Cancelar</button>
@@ -61,19 +63,28 @@
       </div>
 </header>
 <div class="listaInsumosGerais">
-   <div class="listaIn Insumos">
-        <ul class="ListaUl">
-        <li>Insumo 1</li>
+   <div class="listaIn nome">
+        <ul class="ListaUl" id="listaInsumos">
+          <P>nome</P>
+        <li></li>
     </ul>
   </div> 
-<div class="listaIn Quantidade">
+<div class="listaIn valor">
     <ul class="ListaUl">
-    <li>30</li>
+      <P>Valor</P>
+    <li></li>
 </ul>
 </div> 
-<div class="listaIn Valores">
+<div class="listaIn quantidade">
   <ul class="ListaUl">
-  <li>10,00</li>
+    <P>Quantidade</P>
+  <li></li>
+</ul>
+</div> 
+<div class="listaIn unidade">
+  <ul class="ListaUl">
+    <P>Unidade</P>
+  <li></li>
 </ul>
 </div> 
 </div> 
