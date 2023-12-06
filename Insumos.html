@@ -6,10 +6,8 @@
   <title>BIbox</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="stylesInsumos.css">
-  <script src="java/script.js"></script>
+  <script src="/script.js" defer></script>
 </head>
-
 <body>
   <div class="topnav" id="myTopnav">
     <img src="" alt="">
@@ -27,18 +25,27 @@
   <main>
     <div>
 <div class="insumo-form">
-    <h2>Cadastro de Insumos</h2>
-    <form action="salvar_insumo.php" method="post">
+  <div class="cadastroInsumos">
+    <button class="btncadastroInsumos" id="btnCadastros">Cadastro de Insumos</button>
+  </div>
+    <div>
+    <div>
+     <form class="formCadastroInsumos" id="frm">
       <label for="nome">Insumo:
-      <input type="text" placeholder="Nome do Insumo" id="NomeInsumo" name="nome" required></label>
+      <input class="textInsumos textArea" type="text" placeholder="Nome do Insumo" id="NomeInsumo" name="nome" required></label>
       <label for="nome">Valor:
-      <input type="text" placeholder="Valor do Insumo" id="ValorInsumo" name="nome" required></label>
+      <input class="textInsumos textArea" type="text" placeholder="Valor do Insumo" id="ValorInsumo" name="nome" required></label>
       <label for="nome">Quant.:
-      <input type="text" placeholder="Quantidade" id="QuantidadeInsumo" name="nome" required></label>
+      <input class="textInsumos textArea" type="text" placeholder="Quantidade" id="QuantidadeInsumo" name="nome" required></label>
       <label for="nome">UN:
-      <input type="text" placeholder="Unidade" id="UnidadeInsumo" name="nome" required></label>
-      <button type="submit" class="btn save-icon"> <i class="fa fa-save"></i></button>
+      <input class="textInsumos textArea" type="text" placeholder="Unidade" id="UnidadeInsumo" name="nome" required></label>
+      <div class="botoesSalvarCancelar">
+      <input class="btn SalvarInsumo" type="submit" value="Salvar">
+      <button class="btn" id="btnCancelar">Cancelar</button>
+      </div>
     </form>
+  </div>
+  </div>
   </div>
   <header class="menuInsumos">
     <div>
@@ -47,7 +54,7 @@
     <div class="col-12 search-container procurarinsumo-form" style="text-align: center;">
         <form action="buscar_insumos.php" method="get">
           <h2>Buscar Insumo
-          <input type="search" id="buscaInsumo" class="form" placeholder="Buscar insumo" name="search" style="wight: 100px;">
+          <input type="search" id="buscaInsumo" class="form" placeholder="Buscar insumo" name="search">
           <button type="submit" class="btn search-icon"> <i class="fa fa-search"></i>
           </button></h2>
         </form>

@@ -87,7 +87,7 @@ body{
 }
 
 html {
-  background-color: var(--corprincipal)
+  background-color: var(--prata);
 }
 
 /* Estilos do Header e do menu de navegação */
@@ -103,6 +103,7 @@ nav ul {
 
 nav ul li {
   display: inline;
+  justify-content: space-between;
   margin-right: 20px;
 }
 
@@ -127,7 +128,6 @@ main {
 
 section {
   margin-bottom: 40px;
-  background-color: var(--corsecundaria);
 }
 
 h2 {
@@ -165,13 +165,112 @@ h2 {
 .menuClientes {
   display: flex;
   justify-content: space-between;
-  background-color: #555;
+  background-color: #bbbaba;;
 }
 
 .listaClientes {
   background-color: aqua;
 }
 
-.cliente-form {
-  background-color: #555;
+
+
+.ListaUl{
+  list-style: none;
 }
+
+.listaInsumosGerais {
+  display: flex;
+  justify-content: space-between;
+  justify-content: center;
+  background-color: var(--grafite);
+  
+}
+
+.listaIn {
+  background-color: #555;
+  width: 40rem;
+  text-align: center;
+  color: #fff;
+  margin: 1px;
+}
+
+/*insumos*/
+
+#btnCadastros {
+ font-size: 2rem;
+background-color: var(--verde);
+color: var(#fff);
+padding: 0.5rem 2rem;
+border-radius: 20px;
+}
+
+#btnCadastros:hover{
+background-color: var(--grafite);
+}
+
+.cadastroInsumos {
+display: flex;
+justify-content: center;
+text-align: center;
+color: var(--prata);
+
+}
+
+#frm {
+display: flex;
+flex-flow: wrap;
+justify-content: center;
+font-size: 1rem;
+margin: 0.1rem 0;
+background-color: #bbbaba;
+}
+
+.textInsumos {
+width: 6rem;
+}
+
+.btn   {
+  font-size: 1rem;
+ background-color: var(--verde);
+ color: var(--branco);
+ padding: 0.5rem 2rem;
+ border-radius: 20px;
+}
+
+.btn:hover {
+background-color: var(--grafite);
+}
+
+/*Barra de pesquisa Phill*/
+input[type=search] {
+  width: 200px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+ }
+
+input[type=search]:focus {
+  width: 46%;
+}
+
+/*Barra de testo Phill*/
+input[type=text] {
+  width: 200px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+.botoesSalvarCancelar {
+  display: flex;
+  justify-content: center;
+}
+

@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BIbox</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="stylesCliente.css">
-  <script src="java/script.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <script src="/script.js" defer></script>
 </head>
 
 <body>
@@ -28,11 +28,14 @@
   <main>
     <div>
       <div class="cliente-form">
-        <h2>Cadastro de Cliente</h2>
-        <form action="salvar_cliente.php" method="post">
+        <div class="cadastroInsumos">
+          <button class="btncadastroCliente" id="btnCadastros">Cadastro de Clientes</button>
+        </div>
+        <form action="salvar_cliente.php" method="post" id="frm">
           <label for="nome">Nome do Cliente:</label>
-          <input type="text" id="nome" name="nome" required>
-          <input type="submit" value="Salvar">
+          <input placeholder="Nome Cliente" type="text" id="nome" name="nome" required>
+          <input class="btn" type="submit" value="Salvar">
+          <button class="btn" id="btnCancelar">Cancelar</button>
         </form>
       </div>
       <header class="menuClientes">
@@ -43,8 +46,8 @@
           <h2>Buscar Clientes</h2>
           <form action="buscar_clientes.php" method="get">
             <label for="nome">Buscar por Nome:</label>
-            <input type="text" id="nome" name="nome">
-            <input type="submit" value="Buscar">
+            <input placeholder="Nome Cliente" type="text" id="nome" name="nome">
+            <input class="btn" type="submit" value="Buscar">
           </form>
         </div>
       </header>
