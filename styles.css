@@ -172,28 +172,43 @@ h2 {
   background-color: aqua;
 }
 
-
-
-.ListaUl{
-  list-style: none;
+.listasInsumos{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: #555;
+  color: #fff;
 }
 
-.listaInsumosGerais {
-  display: flex;
+.ListaUl{
   justify-content: space-between;
-  justify-content: center;
-  background-color: var(--grafite);
-  
+  text-align: center;
+  display: flex;
+  list-style: none;
+  margin: 0 0 0 1rem;
+}
+
+.listaTitulos {
+ padding: 0 1.8rem 0 1.8rem;
+ font-size: large;
+ display: flex;
+ justify-content: space-between;
+ border-bottom: 2px solid var(--branco);
 }
 
 .listaIn {
   background-color: #555;
-  width: 40rem;
   text-align: center;
   color: #fff;
   margin: 1px;
 }
 
+.listaBorda {
+  padding: 0 4rem 0 4rem;
+  border-right: 2px solid var(--branco);
+  border-left: 2px solid var(--branco);
+}
 /*insumos*/
 
 #btnCadastros {
@@ -225,9 +240,6 @@ margin: 0.1rem 0;
 background-color: #bbbaba;
 }
 
-.textInsumos {
-width: 6rem;
-}
 
 .btn   {
   font-size: 1rem;
@@ -274,3 +286,19 @@ input[type=text] {
   justify-content: center;
 }
 
+#UnidadeInsumo {
+  margin-top: 2rem;
+
+}
+
+.select { 
+  background-color: var(--branco);
+  color: #555;
+  margin-top: 2rem;
+  width: 100px;
+  font-size: 16px;
+  line-height: 1;
+  border: 0;
+  border-radius: 4px;
+  height: 45px;
+} 

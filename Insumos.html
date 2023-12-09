@@ -36,11 +36,19 @@
       <label>Insumo:
       <input class="textInsumos" type="text" placeholder="Nome do Insumo" id="NomeInsumo" name="nome" required></label>
       <label>Valor:
-      <input class="textValor textArea" type="text" placeholder="Valor do Insumo" id="ValorInsumo" name="nome" required></label>
+      <input class="textValor" type="text" placeholder="Valor do Insumo" id="ValorInsumo" name="nome" required></label>
       <label>Quant.:
-      <input class="textQuant textArea" type="text" placeholder="Quantidade" id="QuantidadeInsumo" name="nome" required></label>
-      <label>UN:
-      <input class="textUn textArea" type="text" placeholder="Unidade" id="UnidadeInsumo" name="nome" required></label>
+      <input class="textQuant" type="text" placeholder="Quantidade" id="QuantidadeInsumo" name="nome" required></label>
+      <div>
+      <label for="opcoes" id="UnidadeInsumo">UN Medida:</label>
+      <select class="select" id="opcoes">
+        <option value="Kilo">Kilo</option>
+        <option value="Grama">Grama</option>
+        <option value="Litro">Litro</option>
+        <option value="Unidade">Unidade</option>
+        <option value="Fardo">Fardo</option>
+      </select>
+    </div>
       <div class="botoesSalvarCancelar">
       <input class="btn SalvarInsumo" type="submit" value="Salvar">
       <button class="btn" id="btnCancelar">Cancelar</button>
@@ -62,32 +70,16 @@
         </form>
       </div>
 </header>
-<div class="listaInsumosGerais">
-   <div class="listaIn nome">
-        <ul class="ListaUl" id="listaInsumos">
-          <P>nome</P>
-        <li></li>
-    </ul>
-  </div> 
-<div class="listaIn valor">
-    <ul class="ListaUl">
-      <P>Valor</P>
-    <li></li>
-</ul>
+<nav class="listasInsumos">
+  <ul class="ListaUl listaTitulos">
+    <li>Nome Insumo</li>
+    <li>Valor</li>
+    <li>Quantidade</li>
+    <li>Unidade</li>
+  </ul>
+<div class="listaIn nome">
 </div> 
-<div class="listaIn quantidade">
-  <ul class="ListaUl">
-    <P>Quantidade</P>
-  <li></li>
-</ul>
-</div> 
-<div class="listaIn unidade">
-  <ul class="ListaUl">
-    <P>Unidade</P>
-  <li></li>
-</ul>
-</div> 
-</div> 
+</nav>
 </main>
 </body>
 </html>
