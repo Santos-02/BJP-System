@@ -169,10 +169,6 @@ h2 {
 }
 
 .listaClientes {
-  background-color: aqua;
-}
-
-.listasInsumos{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -180,6 +176,7 @@ h2 {
   background-color: #555;
   color: #fff;
 }
+
 
 .ListaUl{
   justify-content: space-between;
@@ -210,6 +207,15 @@ h2 {
   border-left: 2px solid var(--branco);
 }
 /*insumos*/
+
+.listasInsumos{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: #555;
+  color: #fff;
+}
 
 #btnCadastros {
  font-size: 2rem;

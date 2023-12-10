@@ -7,6 +7,7 @@
   <title>BIbox</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="styles.css">
+  <script src="/clientes.js" defer></script>
   <script src="/script.js" defer></script>
 </head>
 
@@ -26,38 +27,45 @@
   </div>
 
   <main>
+    <header>
     <div>
       <div class="cliente-form">
         <div class="cadastroInsumos">
           <button class="btncadastroCliente" id="btnCadastros">Cadastro de Clientes</button>
         </div>
-        <form action="salvar_cliente.php" method="post" id="frm">
-          <label for="nome">Nome do Cliente:</label>
-          <input placeholder="Nome Cliente" type="text" id="nome" name="nome" required>
-          <input class="btn" type="submit" value="Salvar">
-          <button class="btn" id="btnCancelar">Cancelar</button>
-        </form>
-      </div>
-      <header class="menuClientes">
-        <div>
-          <H2>Lista de clientes Cadastrados</H2>
+        <form id="frm">
+          <label for="nome">Nome do Cliente:
+          <input placeholder="Nome Cliente" type="text" id="nomeCliente" name="nome" required></label>
+          <label for="nome">Telefone do Cliente:
+          <input placeholder="Telelone Cliente" type="text" id="telefoneCliente" name="nome" required></label>
+        <div class="botoesSalvarCancelar">
+        <input class="btn SalvarInsumo" type="submit" value="Salvar" id="salvar">
+        <button class="btn" id="btnCancelar">Cancelar</button>
         </div>
+        </form>
+        </div>
+       </div>
+        <nav class="menuClientes">
+          <H2>Lista de clientes Cadastrados</H2>
         <div class="procurarCliente-form">
           <h2>Buscar Clientes</h2>
-          <form action="buscar_clientes.php" method="get">
+          <form>
             <label for="nome">Buscar por Nome:</label>
             <input placeholder="Nome Cliente" type="text" id="nome" name="nome">
             <input class="btn" type="submit" value="Buscar">
           </form>
         </div>
-      </header>
-      <div class="listaClientes">
-        <ul>
-          <li>Cliente 1</li>
+      </nav>
+      <nav class="listaClientes">
+        <ul class="ListaUl listaTitulos">
+          <li>Nome do Cliente</li>
+          <li>Telefone do Cliente</li>
         </ul>
-      </div>
+      <div class="listaIn nome">
+      </div> 
+      </nav>
     </div>
   </main>
+</header>
 </body>
-
 </html>

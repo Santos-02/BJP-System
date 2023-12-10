@@ -1,4 +1,4 @@
-const botaoSalvar = document.querySelector('.SalvarInsumo');
+const botaoSalvar = document.getElementById('salvar');
 
 // Função para verificar se o valor é numérico
 function validarNumero(valor) {
