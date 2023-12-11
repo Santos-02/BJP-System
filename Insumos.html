@@ -4,71 +4,82 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BIbox</title>
-  <link rel="stylesheet" href="stylesProd.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="/script.js" defer></script>
+  <script src="/meuInsumo.js" defer></script>
+
 </head>
 <body>
-  <header class="menuPrincipal">
-    <nav class="menu">
-        <div>
-        <img src="" alt="">       
-     </div>
-        <div>
-      <ul>
-        <li><a href="/index.html">Minha Empresa</a></li>
-        <li><a href="/Clientes.html">Clientes</a></li>
-        <li><a href="/Insumos.html">Insumos</a></li>
-        <li><a href="#receitas">Receitas</a></li>
-        <li><a href="#cardapio">Cardapio</a></li>
-        <li><a href="#pedidos">Pedidos</a></li>
-        <li><a href="#meu-mei">Meu MEI</a></li>
-      </ul>
-    </div>
-    </nav>
-  </header>
+  <div class="topnav" id="myTopnav">
+    <img src="" alt="">
+    <a href="/index.html">Minha Empresa</a>
+    <a href="/Clientes.html">Clientes</a>
+    <a href="/Insumos.html" class="active">Insumos</a>
+    <a href="/receitas.html">Receitas</a>
+    <a href="#cardapio">Cardapio</a>
+    <a href="#pedidos">Pedidos</a>
+    <a href="#meu-mei">Meu MEI</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
   <main>
     <div>
-<div class="cliente-form">
-    <h2>Cadastro de Insumos</h2>
-    <form action="salvar_cliente.php" method="post">
-      <label for="nome">Nome do Insumo:</label>
-      <input type="text" id="nome" name="nome" required>
-      <label for="nome">Valor do Insumo:</label>
-      <input type="text" id="nome" name="nome" required>
-      <label for="nome">Grama/Litro:</label>
-      <input type="text" id="nome" name="nome" required>
-      <input type="submit" value="Salvar">
+<div class="insumo-form">
+  <div class="cadastroInsumos">
+    <button class="btncadastroInsumos" id="btnCadastros">Cadastro de Insumos</button>
+  </div>
+    <div>
+    <div>
+     <form class="formCadastroInsumos" id="frm">
+      <label>Insumo:
+      <input class="textInsumos" type="text" placeholder="Nome do Insumo" id="NomeInsumo" name="nome" required></label>
+      <label>Valor:
+      <input class="textValor" type="text" placeholder="Valor do Insumo" id="ValorInsumo" name="nome" required></label>
+      <label>Quant.:
+      <input class="textQuant" type="text" placeholder="Quantidade" id="QuantidadeInsumo" name="nome" required></label>
+      <div>
+      <label for="opcoes" id="UnidadeInsumo">UN Medida:</label>
+      <select class="select" id="opcoes">
+        <option value="Kilo">Kilo</option>
+        <option value="Grama">Grama</option>
+        <option value="Litro">Litro</option>
+        <option value="Unidade">Unidade</option>
+        <option value="Fardo">Fardo</option>
+      </select>
+    </div>
+      <div class="botoesSalvarCancelar">
+      <input class="btn SalvarInsumo" type="submit" value="Salvar" id="salvar">
+      <button class="btn" id="btnCancelar">Cancelar</button>
+      </div>
     </form>
   </div>
-  <header class="menuClientes">
+  </div>
+  </div>
+  <header class="menuInsumos">
     <div>
     <H2>Lista de Insumos Cadastrados</H2>
     </div>
-    <div class="procurarCliente-form">
-        <h2>Buscar Insumo</h2>
-        <form action="buscar_clientes.php" method="get">
-          <label for="nome">Buscar por Nome:</label>
-          <input type="text" id="nome" name="nome">
-          <input type="submit" value="Buscar">
+    <div class="col-12 search-container procurarinsumo-form" style="text-align: center;">
+        <form action="buscar_insumos.php" method="get">
+          <h2>Buscar Insumo
+          <input type="search" id="buscaInsumo" class="form" placeholder="Buscar insumo" name="search">
+          <button type="submit" class="btn search-icon"> <i class="fa fa-search"></i>
+          </button></h2>
         </form>
       </div>
 </header>
-<div class="listaInsumosGerais">
-   <div class="listaIn Insumos">
-        <ul class="ListaUl">
-        <li>Insumo 1</li>
-    </ul>
-  </div> 
-<div class="listaIn Quantidade">
-    <ul class="ListaUl">
-    <li>30</li>
-</ul>
+<nav class="listasInsumos">
+  <ul class="ListaUl listaTitulos">
+    <li>Nome Insumo</li>
+    <li>Valor</li>
+    <li>Quantidade</li>
+    <li>Unidade</li>
+  </ul>
+<div class="listaIn nome">
 </div> 
-<div class="listaIn Valores">
-  <ul class="ListaUl">
-  <li>10,00</li>
-</ul>
-</div> 
-</div> 
+</nav>
 </main>
 </body>
 </html>

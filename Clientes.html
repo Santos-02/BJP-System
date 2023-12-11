@@ -1,59 +1,71 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BIbox</title>
-  <link rel="stylesheet" href="stylesCliente.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="/clientes.js" defer></script>
+  <script src="/script.js" defer></script>
 </head>
+
 <body>
-  <header class="menuPrincipal">
-    <nav class="menu">
-        <div>
-        <img src="" alt="">       
-     </div>
-        <div>
-      <ul>
-        <li><a href="/index.html">Minha Empresa</a></li>
-        <li><a href="/Clientes.html">Clientes</a></li>
-        <li><a href="/Insumos.html">Insumos</a></li>
-        <li><a href="#receitas">Receitas</a></li>
-        <li><a href="#cardapio">Cardapio</a></li>
-        <li><a href="#pedidos">Pedidos</a></li>
-        <li><a href="#meu-mei">Meu MEI</a></li>
-      </ul>
-    </div>
-    </nav>
-  </header>
-    <main>
-        <div>
-    <div class="cliente-form">
-        <h2>Cadastro de Cliente</h2>
-        <form action="salvar_cliente.php" method="post">
-          <label for="nome">Nome do Cliente:</label>
-          <input type="text" id="nome" name="nome" required>
-          <input type="submit" value="Salvar">
-        </form>
-      </div>
-      <header class="menuClientes">
-        <div>
-        <H2>Lista de clientes Cadastrados</H2>
+  <div class="topnav" id="myTopnav">
+    <img src="" alt="">
+    <a href="/index.html">Minha Empresa</a>
+    <a href="/Clientes.html" class="active">Clientes</a>
+    <a href="/Insumos.html">Insumos</a>
+    <a href="/receitas.html">Receitas</a>
+    <a href="#cardapio">Cardapio</a>
+    <a href="#pedidos">Pedidos</a>
+    <a href="#meu-mei">Meu MEI</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <main>
+    <header>
+    <div>
+      <div class="cliente-form">
+        <div class="cadastroInsumos">
+          <button class="btncadastroCliente" id="btnCadastros">Cadastro de Clientes</button>
         </div>
+        <form id="frm">
+          <label for="nome">Nome do Cliente:
+          <input placeholder="Nome Cliente" type="text" id="nomeCliente" name="nome" required></label>
+          <label for="nome">Telefone do Cliente:
+          <input placeholder="Telelone Cliente" type="text" id="telefoneCliente" name="nome" required></label>
+        <div class="botoesSalvarCancelar">
+        <input class="btn SalvarInsumo" type="submit" value="Salvar" id="salvar">
+        <button class="btn" id="btnCancelar">Cancelar</button>
+        </div>
+        </form>
+        </div>
+       </div>
+        <nav class="menuClientes">
+          <H2>Lista de clientes Cadastrados</H2>
         <div class="procurarCliente-form">
-            <h2>Buscar Clientes</h2>
-            <form action="buscar_clientes.php" method="get">
-              <label for="nome">Buscar por Nome:</label>
-              <input type="text" id="nome" name="nome">
-              <input type="submit" value="Buscar">
-            </form>
-          </div>
-    </header>
-       <div class="listaClientes">
-            <ul>
-            <li>Cliente 1</li>
+          <h2>Buscar Clientes</h2>
+          <form>
+            <label for="nome">Buscar por Nome:</label>
+            <input placeholder="Nome Cliente" type="text" id="nome" name="nome">
+            <input class="btn" type="submit" value="Buscar">
+          </form>
+        </div>
+      </nav>
+      <nav class="listaClientes">
+        <ul class="ListaUl listaTitulos">
+          <li>Nome do Cliente</li>
+          <li>Telefone do Cliente</li>
         </ul>
+      <div class="listaIn nome">
       </div> 
+      </nav>
     </div>
-    </main>
-  </body>
+  </main>
+</header>
+</body>
 </html>
