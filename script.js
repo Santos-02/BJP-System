@@ -1,7 +1,7 @@
 
 //botões de cadastros para abrir e fechar
 const botaoCadastros = document.getElementById('btnCadastros');
-const formCadastros = document.getElementById('frm');
+const formCadastros = document.getElementById('frmInsumos');
 const btnCancelar = document.getElementById ('btnCancelar');
 
 
@@ -17,7 +17,6 @@ botaoCadastros.addEventListener('click', () => {
 btnCancelar.addEventListener('click', () => {
   formCadastros.style.display = 'none';
 });
-
 
 
 function myFunction() {

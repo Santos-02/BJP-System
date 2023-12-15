@@ -15,45 +15,71 @@ function exibirMensagemErro(element, mensagem) {
 
 // Função para buscar os insumos do localStorage
 function obterInsumosLocalStorage() {
-  const insumosLocalStorage = localStorage.getItem('meusInsumos');
-  return insumosLocalStorage ? JSON.parse(insumosLocalStorage) : [];
+  const chavesLocalStorage = Object.keys(localStorage);
+  const insumos = chavesLocalStorage.filter(chave => chave.startsWith('meuInsumo'))
+                                     .map(chave => JSON.parse(localStorage.getItem(chave)));
+  return insumos;
 }
 
 // Função para exibir os insumos na página
 function exibirInsumosNaPagina(insumos) {
   const divListaInsumos = document.querySelector('.listaIn');
 
-  // Limpar a lista de insumos na página antes de exibir os novos insumos
-  divListaInsumos.innerHTML = '';
+  // Verificar se o elemento com ID 'paginaReceitas' está presente na página
+  const paginaReceitas = document.getElementById('paginaReceitas');
 
-  // Iterar sobre cada insumo e criar a lista na página
-  insumos.forEach(insumo => {
-    const ulInsumo = document.createElement('ul');
+  // Se o elemento #paginaReceitas não existir, exibe a lista de insumos
+  if (!paginaReceitas) {
+    // Limpar a lista de insumos na página antes de exibir os novos insumos
+    divListaInsumos.innerHTML = '';
 
-    const liDescricao = document.createElement('li');
-    liDescricao.textContent = `${insumo.descricaoInsumo}`;
-    liDescricao.classList.add('listaBorda');
+    // Iterar sobre cada insumo e criar a lista na página
+    insumos.forEach(insumo => {
+      const ulInsumo = document.createElement('ul');
 
-    const liValor = document.createElement('li');
-    liValor.textContent = `${insumo.valorinsumo}`;
-    liValor.classList.add('listaBorda');
+      const liDescricao = document.createElement('li');
+      liDescricao.textContent = `${insumo.descricaoInsumo}`;
+      liDescricao.classList.add('listaBorda');
 
-    const liQuantidade = document.createElement('li');
-    liQuantidade.textContent = `${insumo.quantidadeInsumo}`;
-    liQuantidade.classList.add('listaBorda');
+      const liValor = document.createElement('li');
+      liValor.textContent = `${insumo.valorinsumo}`;
+      liValor.classList.add('listaBorda');
 
-    const liUnidade = document.createElement('li');
-    liUnidade.textContent = `${insumo.unidadeInsumo}`;
-    liUnidade.classList.add('listaBorda');
+      const liQuantidade = document.createElement('li');
+      liQuantidade.textContent = `${insumo.quantidadeInsumo}`;
+      liQuantidade.classList.add('listaBorda');
 
-    ulInsumo.appendChild(liDescricao);
-    ulInsumo.appendChild(liValor);
-    ulInsumo.appendChild(liQuantidade);
-    ulInsumo.appendChild(liUnidade);
+      const liUnidade = document.createElement('li');
+      liUnidade.textContent = `${insumo.unidadeInsumo}`;
+      liUnidade.classList.add('listaBorda');
 
-    ulInsumo.classList.add('ListaUl');
-    divListaInsumos.appendChild(ulInsumo);
-  });
+      ulInsumo.appendChild(liDescricao);
+      ulInsumo.appendChild(liValor);
+      ulInsumo.appendChild(liQuantidade);
+      ulInsumo.appendChild(liUnidade);
+
+      ulInsumo.classList.add('ListaUl');
+      divListaInsumos.appendChild(ulInsumo);
+    });
+  }
+}
+
+// Função para salvar as informações no localStorage com chave única
+function adicionarNovoInsumo(descricaoInsumo, valorinsumo, quantidadeInsumo, unidadeInsumo) {
+  let proximoNumero = 1;
+
+  while (localStorage.getItem(`meuInsumo${proximoNumero}`) !== null) {
+    proximoNumero++;
+  }
+
+  const novoInsumo = {
+    descricaoInsumo,
+    valorinsumo,
+    quantidadeInsumo,
+    unidadeInsumo,
+  };
+
+  localStorage.setItem(`meuInsumo${proximoNumero}`, JSON.stringify(novoInsumo));
 }
 
 // Função para salvar as informações no objeto
@@ -76,28 +102,12 @@ botaoSalvar.addEventListener('click', (event) => {
     return; // Interrompe a execução do código caso o valor não seja numérico
   }
 
-  // Criando um objeto com as informações do novo insumo
-  const novoInsumo = {
-    descricaoInsumo,
-    valorinsumo,
-    quantidadeInsumo,
-    unidadeInsumo,
-  };
-
-  // Obtendo os insumos existentes no localStorage
-  const insumosExistente = obterInsumosLocalStorage();
-
-  // Adicionando o novo insumo ao array existente
-  insumosExistente.push(novoInsumo);
-
-  // Salvando o array atualizado no localStorage
-  localStorage.setItem('meusInsumos', JSON.stringify(insumosExistente));
+  // Adiciona o novo insumo ao localStorage com chave única
+  adicionarNovoInsumo(descricaoInsumo, valorinsumo, quantidadeInsumo, unidadeInsumo);
 
   // Exibindo os insumos atualizados na página
-  exibirInsumosNaPagina(insumosExistente);
-
-  // Exibindo as informações no console
-  console.log("Insumo adicionado:", novoInsumo);
+  exibirInsumosNaPagina(obterInsumosLocalStorage());
+  
 
   // Limpar os campos do formulário após adicionar o insumo
   document.getElementById('NomeInsumo').value = '';
@@ -111,37 +121,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const insumos = obterInsumosLocalStorage();
   exibirInsumosNaPagina(insumos);
 });
-
-
-
-/*function salvarInformacoes() {
-  meuInsumo.descricao = prompt('Digite sua descrição:');
-  meuInsumo.quantidade = parseInt(prompt('Digite à quantidade:'));
-  meuInsumo.unidademedida = prompt('Digite à unidade de medida:');
-  meuInsumo.valor = parseInt(prompt('Digite o valor:'));
+if (!document.getElementById('paginaReceitas')) {
+  const insumos = obterInsumosLocalStorage();
+  exibirInsumosNaPagina(insumos);
 }
-
-
-const valoresDefinidos = {};
-for (const chave in meuInsumo) {
-  if (meuInsumo[chave] !== undefined) {
-    valoresDefinidos[chave] = meuInsumo[chave];
-  }
-}
-
-
-
-/* Função para apresentar as informações na tela
-function apresentarInformacoes() {
-  console.log('descricao: ' + meuInsumo.descricao);
-  console.log('quantidade: ' + meuInsumo.quantidade);
-  console.log('unidademedida: ' + meuInsumo.unidademedida);
-  console.log('Valor: ' + meuInsumo.valor);
-}*/
-
-// Chama a função para salvar as informações
-//salvarInformacoes();
-
-// Chama a função para apresentar as informações
-//apresentarInformacoes();*/
-

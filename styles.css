@@ -311,3 +311,20 @@ input[type=text] {
 
 /*receitas*/
 
+#frmInsumos {
+display: none;
+flex-flow: wrap;
+justify-content: center;
+font-size: 1rem;
+margin: 0.1rem 0;
+background-color: #bbbaba;
+}
+
+.formCadastroReceitas {
+display: flex;
+justify-content: center;}
+
+.telaReceitas {
+  width: 0,2rem;
+
+}
