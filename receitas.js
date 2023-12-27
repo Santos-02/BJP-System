@@ -54,13 +54,14 @@ document.getElementById('btnCancelar').addEventListener('click', (event) => {
   formCadastrosInsumos.style.display = 'none';
 });
 
-// Selecionar o label de opções onde você quer imprimir os insumos
-const labelOpcoes = document.getElementById('UnidadeInsumo');
+// Selecionar o elemento UL onde você quer exibir a lista de insumos
+const listaInsumos = document.getElementById('listaInsumos');
+const btnAdicionarTodos = document.getElementById('btnAdicionarTodos');
 
-// Função para adicionar as opções ao label de opções
-function adicionarOpcoesInsumos() {
-  // Limpar as opções anteriores, se houver
-  labelOpcoes.innerHTML = '';
+// Função para adicionar a lista de insumos
+function adicionarListaInsumos() {
+  // Limpar a lista de insumos anterior, se houver
+  listaInsumos.innerHTML = '';
 
   // Percorrer todas as chaves do localStorage
   for (let i = 0; i < localStorage.length; i++) {
@@ -71,21 +72,61 @@ function adicionarOpcoesInsumos() {
       const valorChave = localStorage.getItem(chave);
       const insumo = JSON.parse(valorChave);
 
-      // Criar um elemento option para cada insumo
-      const option = document.createElement('option');
-      option.text = `${insumo.descricaoInsumo}`;
-      
-      // Adicionar a chave como valor do option (pode ser útil para futuras referências)
-      option.value = chave;
+      // Criar um elemento li para cada insumo
+      const listItem = document.createElement('li');
 
-      // Adicionar a option ao label de opções
-      labelOpcoes.appendChild(option);
+      // Criar um checkbox para o insumo
+      const checkbox = document.createElement('input');
+      checkbox.type = 'checkbox';
+      checkbox.value = chave; // Chave como valor do checkbox (pode ser útil para futuras referências)
+
+      // Criar um label para o checkbox com o nome do insumo
+      const label = document.createElement('label');
+      label.textContent = insumo.descricaoInsumo;
+
+      // Adicionar o checkbox e o label ao listItem
+      listItem.appendChild(checkbox);
+      listItem.appendChild(label);
+
+      // Adicionar o listItem à lista de insumos
+      listaInsumos.appendChild(listItem);
     }
   }
 }
 
-// Chamar a função para adicionar as opções ao carregar a página
-window.addEventListener('DOMContentLoaded', () => {
-  adicionarOpcoesInsumos();
+// Adicionar evento de clique no botão "Adicionar à Receita"
+btnAdicionarTodos.addEventListener('click', () => {
+  adicionarTodosOsInsumos();
 });
+
+// Função para adicionar todos os insumos selecionados à receita com o nome e a quantidade
+function adicionarTodosOsInsumos() {
+  const nomeReceita = document.getElementById('nomeReceita').value; // Obtém o nome da receita do formulário
+  const quantidadeRendimento = document.getElementById('quantidadeRendimento').value; // Obtém a quantidade do rendimento do formulário
+
+  const checkboxes = document.querySelectorAll('#listaInsumos input[type="checkbox"]:checked');
+  const insumosSelecionados = Array.from(checkboxes).map(checkbox => {
+    const valorChave = checkbox.value;
+    const valorInsumo = localStorage.getItem(valorChave);
+    return JSON.parse(valorInsumo);
+  });
+
+  // Criando um objeto para representar a receita com nome, quantidade e insumos
+  const receita = {
+    nome: nomeReceita,
+    quantidade: quantidadeRendimento,
+    insumos: insumosSelecionados
+  };
+
+  // Salvando a receita no localStorage com uma chave única
+  const chaveReceita = `receita_${Date.now()}`;
+  localStorage.setItem(chaveReceita, JSON.stringify(receita));
+  console.log('Receita adicionada:', receita);
+}
+
+// Chamar a função para adicionar a lista de insumos ao carregar a página
+window.addEventListener('DOMContentLoaded', () => {
+  adicionarListaInsumos();
+});
+
 

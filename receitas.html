@@ -32,14 +32,12 @@
                 <form class="formCadastroReceitas" id="frmReceitas" style="display: none;">
                     <label>Nome da Receita:
                     <input class="textNomeReceita receitas" type="text" placeholder="Nome da Receita" id="NomeReceita" name="nome" required></label>
-                    <label>Valor de custo:
-                    <input class="textValorReceita receitas" type="text" placeholder="Valor da Receita" id="ValorReceita" name="nome" required></label>
                     <label>Quant:
-                    <input class="textQuantReceita receitas" type="text" placeholder="Quantidade" id="QuantidadeReceita" name="nome" required></label>
+                    <input class="textQuantReceita receitas" type="text" placeholder="Quantidade" id="quantidadeRendimento" name="nome" required></label>
                     <div>
                     <label for="UnidadeInsumo">Insumos usados:</label>
-                    <select class="select" id="UnidadeInsumo">
-                    </select>            
+                    <ul id="listaInsumos"></ul>
+                    <button id="btnAdicionarTodos">Adicionar à Receita</button>
                 </form>
             <div class="InsumoAtalho">
               <div class="insumo-form">
@@ -78,13 +76,8 @@
             </div>
           </div>
         </div>
-<nav class="listasInsumos">
-  <ul class="ListaUl listaTitulos">
-    <li>Nome Insumo</li>
-    <li>Valor</li>
-    <li>Quantidade</li>
-    <li>Unidade</li>
-  </ul>
+<nav class="ListaReceitas">
+  <ul id="listaReceitas"></ul>
 <div class="listaIn nome">
 </div> 
 </nav>
